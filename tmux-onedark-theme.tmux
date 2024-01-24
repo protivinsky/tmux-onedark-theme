@@ -1,13 +1,36 @@
 #!/bin/bash
-onedark_black="#282c34"
-onedark_darker="#21252b"
-onedark_blue="#61afef"
-onedark_yellow="#e5c07b"
-onedark_red="#e06c75"
-onedark_white="#aab2bf"
-onedark_green="#98c379"
-onedark_visual_grey="#3e4452"
-onedark_comment_grey="#5c6370"
+
+# styles based on https://github.com/navarasu/onedark.nvim/blob/master/lua/onedark/palette.lua
+onedark_style="warmer"
+
+case $onedark_style in
+   "warmer")
+      echo "loading warmer theme"
+      onedark_black="#232326"
+      onedark_darker="#1b1c1e"
+      onedark_blue="#57a5e5"
+      onedark_yellow="#dbb671"
+      onedark_red="#de5d68"
+      onedark_white="#a7aab0"
+      onedark_green="#8fb573"
+      onedark_visual_grey="#37383d"
+      onedark_comment_grey="#5a5b5e"
+      onedark_light_grey="#818387"
+      ;;
+   "*")  # default to dark
+      echo "loading dark theme"
+      onedark_black="#282c34"
+      onedark_darker="#21252b"
+      onedark_blue="#61afef"
+      onedark_yellow="#e5c07b"
+      onedark_red="#e86671"
+      onedark_white="#aab2bf"
+      onedark_green="#98c379"
+      onedark_visual_grey="#3b3f4c"
+      onedark_comment_grey="#5c6370"
+      onedark_light_grey="#848b98"
+      ;;
+esac
 
 get() {
    local option=$1
@@ -55,7 +78,7 @@ setw window-status-activity-style "fg=${onedark_black},bg=${onedark_black},none"
 setw "window-status-separator" ""
 setw "clock-mode-colour" "$onedark_comment_grey"
 
-set window-style "fg=${onedark_comment_grey},bg=${onedark_darker}"
+set window-style "fg=${onedark_light_grey},bg=${onedark_darker}"
 set window-active-style "fg=${onedark_white},bg=${onedark_darker}"
 
 set pane-border-style "fg=${onedark_comment_grey},bg=${onedark_darker}"
