@@ -78,14 +78,15 @@ setw window-status-activity-style "fg=${onedark_black},bg=${onedark_black},none"
 setw "window-status-separator" ""
 setw "clock-mode-colour" "$onedark_comment_grey"
 
-set window-style "fg=${onedark_light_grey},bg=${onedark_darker}"
+set window-style "fg=${onedark_comment_grey},bg=${onedark_black}"
 set window-active-style "fg=${onedark_white},bg=${onedark_darker}"
 
 set pane-border-style "fg=${onedark_comment_grey},bg=${onedark_darker}"
 set pane-active-border-style "fg=${onedark_yellow},bg=${onedark_darker}"
 
-set "display-panes-active-colour" "$onedark_red"
-set "display-panes-colour" "$onedark_blue"
+set "display-panes-active-colour" "$onedark_yellow"
+set "display-panes-colour" "$onedark_comment_grey"
+set "display-panes-time" "500"
 
 set "status-bg" "$onedark_black"
 set "status-fg" "$onedark_white"
